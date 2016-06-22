@@ -33,7 +33,11 @@ run() {
 run
 ```
 
-This should produce an output similar to output bellow:
+The logged output is prefixed with the `pid` that is running the task.
+
+This should produce an output as showed bellow:
+
+![screenshot of simple running example](screenshots/bash_async_tasks_screeshot-1.png "Description goes here")
 
 
 
