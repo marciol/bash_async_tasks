@@ -78,13 +78,16 @@ task_run() {
 }
 
 task_wait() {
+  local _result=0
   __task_multiplex &
   wait $!
   for _task in ${_task_list[@]}; do
     wait ${_task}
     if [ $? -ne 0 ]; then
       echo "${RED}* Error on pid: ${_task}${NORMAL}"
+      _result=1
     fi
   done
   __task_finish
+  ((_result == 0))
 }
